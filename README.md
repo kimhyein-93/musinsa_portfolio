@@ -66,7 +66,7 @@
   + 큼직한 sheos object가 섹션의 위치에 영향을 준다고 생각하여 position을 absolute가 아닌 relative로 설정 후 class 제어하여 margin값 및 opacity로 parallax 표현
 
 #### 3) parallax 직접 구현
-+ parallax효과를 구현한 scrip를 함수화 하여 필요한 부분에 독립적으로 사용할 수 있도록 구현하였습니다.
++ parallax효과를 구현한 scrip를 함수화 하여 필요한 부분에 독립적으로 사용할 수 있도록 구현
 + objParallax($trigger, $position, $duration) 
   + $trigger : trigger 위치
   + $position : object의 position 상태 
