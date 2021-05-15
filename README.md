@@ -34,7 +34,7 @@
 + product list를 감싸고 있는 영역을 section으로 정의
 
 #### 2) BEM 방법론
-+ 협업시 혼동되지 않을만한 의미론적 class명을 정의하기 위해 고민
++ 협업시 혼동되지 않을만한 의미론적 class명을 정의
 
 #### 3) 자동화
 + main container에 view type에 대한 class 추가시 view type 레이아웃 변경
