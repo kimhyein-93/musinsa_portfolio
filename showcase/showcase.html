@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/showcase.css">
+    <title>showcase</title>
+</head>
+<body>
+    <header>
+        <h1>App bar</h1>
+    </header>
+    <!-- MAIN -->
+    <div class="section section-main">
+        <div class="section-inner first" id="trigger1">
+            <div class="text-box">
+                <p>MUSINSA SHOWCASE #164</p>
+                <img src="../resources/images/showcase/text_main_everybody.png" alt="">
+            </div>
+            <div class="parallax-thumbnail"></div>
+            <img src="../resources/images/showcase/obj_main_canvas01.png" alt="" class="parallax-object">
+        </div>
+        <div class="section-inner second" id="trigger2">
+            <div class="text-box">
+                <img src="../resources/images/showcase/text_main_everyday.png" alt="">
+            </div>
+            <div class="parallax-thumbnail left">
+                <div class="child-thumbnail top"></div>
+                <div class="child-thumbnail bottom"></div>
+            </div>
+            <div class="parallax-thumbnail right">
+            </div>
+            <div class="parallax-thumbnail bottom">
+            </div>
+            <img src="../resources/images/showcase/obj_main_canvas02.png" alt="" class="parallax-object">
+        </div>
+        <div class="section-inner third" id="trigger3">
+            <div class="text-box">
+                <img src="../resources/images/showcase/text_main_converse.png" alt="">
+            </div>
+            <div class="parallax-thumbnail">
+            </div>
+            <img src="../resources/images/showcase/obj_main_canvas03.png" alt="" class="parallax-object bottom">
+        </div>
+        <div class="section-inner fourth">
+            <div class="parallax-thumbnail">
+            </div>
+        </div>
+    </div>
+    <!--// MAIN -->
+
+    <!-- INTRO1 -->
+    <div class="section section-intro1" id="trigger4">
+        <div class="section-inner parallax-object">
+            <div class="text-box">
+                <img src="../resources/images/showcase/text_intro1_cx.png" alt="">
+                <img src="../resources/images/showcase/text_intro1_ampersand.png" alt="">
+                <img src="../resources/images/showcase/text_intro1_shapes.png" alt="">
+            </div>
+        </div>
+        <div class="hidden-area"></div>
+    </div>
+    <!--// INTRO1 -->
+    
+
+    <!-- INTRO2 -->
+    <div class="section section-intro2">
+        <div class="section-inner ddd" id="trigger5">
+            <div class="parallax-object text-box">
+                <img src="../resources/images/showcase/logo_intro2.png" alt="">
+                <img src="../resources/images/showcase/text_intro2_more.png" alt="">
+                <img src="../resources/images/showcase/text_intro2_righter.png" alt="">
+            </div>
+        </div>
+        <div class="section-inner righter" id="trigger6">
+            <img src="../resources/images/showcase/obj_intro2_convers01.png" alt="" class="parallax-object shoes">
+        </div>
+        <div class="section-inner cx-foam" id="trigger7">
+            <div class="parallax-object text-box">
+                <img src="../resources/images/showcase/text_intro2_cxfoam.png" alt="">
+                <p>
+                    탄력 있는 착화감으로 하루 종일<br>편안한 CX 폼 미드솔.
+                </p>
+            </div>
+            <img src="../resources/images/showcase/obj_intro2_convers02.png" alt="" class="parallax-object shoes">
+            <img src="../resources/images/showcase/obj_intro2_convers03.png" alt=""class="parallax-object insole">
+        </div>
+ 
+        <div class="section-inner cx-stretch" id="trigger8">
+            <div class="parallax-object text-box">
+                <img src="../resources/images/showcase/text_intro2_cxstretch.png" alt="">
+                <p>
+                    발의 형태에 맞춰 쉽게 신고 벗을 수<br>있도록 개발한 혁신적인 신소재.
+                </p>
+            </div>
+            <img src="../resources/images/showcase/obj_intro2_convers04.png" alt="" class="parallax-object shoes">
+        </div>
+        <div class="section-inner new-outsole last" id="trigger9">
+            <div class="parallax-object text-box">
+                <img src="../resources/images/showcase/text_intro2_newoutsole.png" alt="">
+                <p>
+                    최상의 유연성을 위한 러버 아웃솔.
+                </p>
+            </div>
+            <img src="../resources/images/showcase/obj_intro2_convers05.png" alt="" class="parallax-object shoes top">
+            <img src="../resources/images/showcase/obj_intro2_convers06.png" alt="" class="parallax-object shoes bottom">
+        </div>
+    </div>
+    <!--// INTRO2 -->
+
+    <footer>
+        <h1>Bottom UI Area</h1>
+    </footer>
+    <script src="../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="../resources/js/showcase.js"></script>
+    <script>
+        objParallax("trigger1", "absolute", -200);
+        objParallax("trigger2", "absolute", -200);
+        objParallax("trigger3", "absolute", -200);
+        objParallax("trigger4", "fixed");
+        objParallax("trigger5", "relative");
+        objParallax("trigger6", "relative", -200);
+        objParallax("trigger7", "relative", -200);
+        objParallax("trigger8", "relative", -200);
+        objParallax("trigger9", "relative", -450);    
+    </script>
+</body>
+</html>

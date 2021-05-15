@@ -1,0 +1,398 @@
+@charset 'utf-8';
+
+// Base
+@import "./base/mq";
+@import "./base/mqset";
+@import "./base/reset";
+@import "./base/mixin";
+
+header,
+footer {
+    display: flex;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+header {
+    height: rem(100);
+    top: 0;
+}
+footer {
+    height: rem(140);
+    bottom: 0;
+}
+.section {
+    overflow: hidden;
+    position: relative;
+
+    .section-inner {
+        position: relative;
+        max-width: 750px;
+        margin: 0 auto;
+
+        .parallax-object {
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.section-main {
+    @include background("../images/showcase/bg_main.jpg", 50% 50%, no-repeat, cover);
+
+    .text-box {
+        position: absolute;
+        z-index: 3;
+    }
+    .section-inner {
+        padding: 0 rem(40);
+
+        &.first {
+            @include clearfix;
+
+            .text-box {
+                width: 54.4%;
+                left: 9.3%;
+                bottom: rem(40);
+
+                p {
+                    font: {
+                        size: rem(24);
+                        weight: 600;
+                    }
+                    margin-bottom: rem(30);
+                }
+            }
+            .parallax-thumbnail {
+                float: right;
+                margin-top: rem(60);
+                margin-right: rem(-55);
+                width: 38.4%;
+                padding-bottom: 38.4%;
+                @include background("../images/showcase/thumb_main_person01.jpg", 50% 0, no-repeat, cover);
+            }
+            .parallax-object {
+                position: absolute;
+                top: 0;
+                right: -6.6%;
+                width: 66.8%;
+                z-index: 2;
+            }
+        }
+        &.second {
+            font-size: 0;
+
+            .text-box {
+                width: 46.3%;
+                right: 13.3%;
+                top: 20.5%;
+            }
+            .parallax-thumbnail {
+                display: inline-block;
+                vertical-align: bottom;
+
+                &.left {
+                    position: relative;
+                    width: 76.8%;
+                    padding-bottom: 76.8%;
+                    margin-left: -7.6%;
+
+                    .child-thumbnail {
+                        position: absolute;
+                        width: 50%;
+                        padding-bottom: 50%;
+
+                        &.top {
+                            top: 0;
+                            left: 0;
+                            @include background("../images/showcase/thumb_main_person02.jpg", 16% 32%, no-repeat, 390%);
+                        }
+                        &.bottom {
+                            bottom: 0;
+                            right: 0;
+                            @include background("../images/showcase/thumb_main_person02.jpg", 49% 56%, no-repeat, 390%);
+                        }
+                    }
+                }
+                &.right {
+                    width: 38.4%;
+                    padding-bottom: 38.4%;
+                    @include background("../images/showcase/thumb_main_person04.jpg", 50% 0, no-repeat, cover);
+                    margin-right: -7.6%;
+                }
+                &.bottom {
+                    position: absolute;
+                    left: -6%;
+                    bottom: -5.7%;
+                    width: 34.6%;
+                    padding-bottom: 34.6%;
+                    @include background("../images/showcase/thumb_main_person03.jpg", 50% 0, no-repeat, cover);
+                }
+            }
+            .parallax-object {
+                position: absolute;
+                top: 100%;
+                left: -6%;
+                width: 35.7%;
+            }
+        }
+
+        &.third {
+            @include clearfix;
+
+            .text-box {
+                width: 51.5%;
+                left: 4.6%;
+                top: 46.9%;
+            }
+            .parallax-thumbnail {
+                float: right;
+                margin-top: rem(30);
+                margin-right: -13%;
+                width: 38.4%;
+                padding-bottom: 38.4%;
+                @include background("../images/showcase/thumb_main_person05.jpg", 50% 50%, no-repeat, cover);
+            }
+            .parallax-object {
+                position: absolute;
+                top: 27.5%;
+                right: 14.1%;
+                width: 40.4%;
+            }
+        }
+        &.fourth {
+            .parallax-thumbnail {
+                margin-top: rem(-43);
+                margin-left: -13%;
+                width: 38.4%;
+                padding-bottom: 38.4%;
+                @include background("../images/showcase/thumb_main_person06.jpg", 50% 50%, no-repeat, 142%);
+            }
+        }
+    }
+}
+
+.section-intro1 {
+    .section-inner {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        @include background("../images/showcase/bg_intro1.jpg", 50% 50%, no-repeat, cover);
+    }
+    .text-box {
+        img {
+            display: block;
+            margin: {
+                left: auto;
+                right: auto;
+            }
+
+            $textSizes: (
+                1: 47.8%,
+                2: 7.8%,
+                3: 50.8%,
+            );
+            @each $length, $size in $textSizes {
+                &:nth-child(#{$length}) {
+                    width: $size;
+                }
+            }
+            &:nth-child(2) {
+                margin: {
+                    top: rem(70);
+                    bottom: rem(70);
+                }
+            }
+        }
+    }
+}
+
+.hidden-area {
+    width: 100%;
+    height: 0;
+    background: transparent;
+}
+
+.section-intro2 {
+    background: #d5d5d5;
+
+    img {
+        max-width: none;
+    }
+
+    .text-box {
+        width: 100%;
+        z-index: 3;
+
+        img {
+            max-width: 100%;
+        }
+        p {
+            margin-top: rem(33);
+            font-size: rem(28);
+            line-height: 1.536em;
+        }
+    }
+
+    .section-inner {
+        &.ddd {
+            padding-top: rem(440);
+            .parallax-object {
+                &.text-box {
+                    img {
+                        display: block;
+                        margin: {
+                            left: auto;
+                            right: auto;
+                        }
+                        $textSizes: (
+                            1: 8.9%,
+                            2: 50.2%,
+                            3: 59.2%,
+                        );
+                        @each $length, $size in $textSizes {
+                            &:nth-child(#{$length}) {
+                                width: $size;
+                                opacity: 0;
+                                transition: all 0.5s ease-in-out #{$length * 0.2}s;
+                            }
+                        }
+                        &:nth-child(2) {
+                            margin: {
+                                top: rem(50);
+                                bottom: rem(50);
+                            }
+                        }
+                    }
+                    &.on {
+                        img {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        &.righter {
+            .parallax-object {
+                transition: all 0.7s ease-in-out;
+                text-align: center;
+                &.shoes {
+                    margin-top: rem(195);
+                    margin-left: 0;
+                    width: 118.6%;
+
+                    &.on {
+                        margin-left: -17.7%;
+                    }
+                }
+            }
+        }
+
+        &.cx-foam {
+            margin-top: rem(-115);
+
+            .parallax-object {
+                &.text-box {
+                    position: absolute;
+                    top: rem(30);
+                    left: 9.3%;
+                    opacity: 0;
+
+                    &.on {
+                        opacity: 1;
+                    }
+                    img {
+                        width: 34.6%;
+                    }
+                }
+                &.shoes {
+                    position: relative;
+                    margin-left: -35.4%;
+                    width: 135.4%;
+                    z-index: 2;
+                    &.on {
+                        margin-left: -17.7%;
+                    }
+                }
+                &.insole {
+                    position: absolute;
+                    top: rem(-304);
+                    right: 0;
+                    width: 32.8%;
+
+                    &.on {
+                        right: 3.7%;
+                    }
+                }
+            }
+        }
+
+        &.cx-stretch {
+            .parallax-object {
+                &.text-box {
+                    position: absolute;
+                    top: rem(108);
+                    left: 9.3%;
+                    opacity: 0;
+
+                    &.on {
+                        opacity: 1;
+                    }
+                    img {
+                        width: 64.6%;
+                    }
+                }
+                &.shoes {
+                    margin-left: 0;
+                    width: 135.4%;
+                    &.on {
+                        margin-left: -17.7%;
+                    }
+                }
+            }
+        }
+
+        &.new-outsole {
+            .parallax-object {
+                &.text-box {
+                    position: absolute;
+                    top: rem(-95);
+                    left: 9.3%;
+                    opacity: 0;
+
+                    &.on {
+                        opacity: 1;
+                    }
+                    img {
+                        width: 53.3%;
+                    }
+                }
+                &.shoes {
+                    &.top {
+                        position: absolute;
+                        top: rem(-260);
+                        right: -18.6%;
+                        width: 46.9%;
+                        &.on {
+                            right: -9.3%;
+                        }
+                    }
+                    &.bottom {
+                        width: 135.4%;
+                        margin-left: -35.4%;
+                        &.on {
+                            margin-left: -17.7%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

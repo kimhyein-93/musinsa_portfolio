@@ -1,0 +1,309 @@
+@charset 'utf-8';
+
+// Base
+@import "./base/mq";
+@import "./base/mqset";
+@import "./base/reset";
+@import "./base/mixin";
+
+.product-container {
+    $headerSize: rem(100);
+    .product-header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $headerSize;
+        padding: 0 rem(34) 0 rem(30);
+        background: #fff;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+
+        & > * {
+            display: inline-block;
+        }
+        &__information {
+            &--total-text {
+                font: {
+                    size: rem(28);
+                    weight: 700;
+                }
+                line-height: rem(42);
+            }
+            &--refresh-text {
+                margin-left: 10px;
+                font-size: rem(24);
+                line-height: rem(36);
+                color: #aaa;
+            }
+        }
+        &__view-type {
+            $size: rem(44);
+            width: $size;
+            height: $size;
+        }
+    }
+    .product__list {
+        margin-top: $headerSize;
+
+        .product__item {
+            vertical-align: top;
+
+            &--new-label {
+                .product__item--information {
+                    @include bullet(before, absolute, $left: rem(18), $width: #{rem(70)}) {
+                        background: #ff9500;
+                        content: "NEW";
+                    }
+                }
+
+                &.product__item--exclusive-label {
+                    .product__item--information {
+                        &:after {
+                            left: rem(87.5);
+                        }
+                    }
+                }
+            }
+            &--exclusive-label {
+                .product__item--information {
+                    @include bullet(after, absolute, $bottom: #{rem(254)}, $left: rem(18), $width: #{rem(126)}) {
+                        background: #18a286;
+                        content: "무신사 단독";
+                    }
+                }
+            }
+
+            &--link {
+                display: block;
+            }
+            &--thumb-nail {
+                overflow: hidden;
+                position: relative;
+                background: #f1f1f1;
+                text-align: center;
+                padding-top: 120.54%;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &--information {
+                background: #fff;
+                padding: rem(40) rem(20);
+                height: rem(280);
+
+                &:before,
+                &:after {
+                    $height: rem(52);
+                    top: rem(-26);
+                    height: $height;
+                    font-size: rem(22);
+                    text-align: center;
+                    line-height: $height;
+                    color: #fff;
+                    z-index: 2;
+                }
+            }
+            &--brand {
+                font-size: rem(22);
+            }
+            &--name {
+                margin-top: rem(16);
+                font: {
+                    size: rem(28);
+                    weight: 700;
+                }
+                @include wordBreak;
+                @include ellipsis(2, #{rem(36)});
+            }
+            &--final-information {
+                margin-top: rem(4);
+                @include clearfix;
+            }
+            &--price {
+                @include clearfix;
+            }
+            &--final-price {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: rem(48);
+                float: left;
+            }
+            &--discount-rate {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: rem(48);
+                color: #ff001f;
+                float: right;
+            }
+            &--real-price {
+                font-size: rem(22);
+                color: #aaa;
+                font-weight: 500;
+                line-height: rem(26.4);
+                text-decoration: line-through;
+            }
+        }
+    }
+    &__grid-two {
+        .product-header {
+            &__view-type {
+                @include background("../images/product/Gridview.png", 50% 50%, no-repeat, 100%);
+            }
+        }
+        .product__list {
+            font-size: 0;
+
+            .product__item {
+                display: inline-block;
+                width: 50%;
+
+                @include mq(768px) {
+                    width: 33.333%;
+                }
+
+                &--thumb-nail {
+                    img {
+                        width: 100%;
+
+                        @include mq(768px) {
+                            width: auto;
+                        }
+                    }
+
+                    @include mq(1024px) {
+                        padding-top: 0;
+                        height: 385px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__grid-one {
+        .product-header {
+            &__view-type {
+                @include background("../images/product/Fullview.png", 50% 50%, no-repeat, 100%);
+            }
+        }
+        .product__list {
+            .product__item {
+                display: block;
+                width: 100%;
+
+                &:before,
+                &:after {
+                    bottom: rem(292);
+                }
+                &--thumb-nail {
+                    padding-top: 0;
+
+                    img {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        width: 100%;
+                        max-width: 375px;
+                        transform: none;
+                    }
+                }
+                &--information {
+                    height: auto;
+                    padding: rem(40) rem(30) rem(80);
+                }
+                &--discount-rate {
+                    @include mq(768px) {
+                        margin-left: 15px;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+
+    &__grid-landscape {
+        .product-header {
+            &__view-type {
+                @include background("../images/product/Listview.png", 50% 50%, no-repeat, 100%);
+            }
+        }
+        .product__list {
+            .product__item {
+                display: block;
+                width: 100%;
+
+                &:before,
+                &:after {
+                    $height: rem(52);
+                    height: $height;
+                    font-size: rem(22);
+                    text-align: center;
+                    line-height: $height;
+                    color: #fff;
+                    z-index: 2;
+                }
+                &--new-label {
+                    @include bullet(before, absolute, $left: 0, $bottom: 0, $width: #{rem(70)}) {
+                        background: #ff9500;
+                        content: "NEW";
+                    }
+
+                    &.product__item--exclusive-label {
+                        &:after {
+                            left: rem(70);
+                        }
+                    }
+                }
+                &--exclusive-label {
+                    @include bullet(after, absolute, $left: 0, $bottom: 0, $width: #{rem(126)}) {
+                        background: #18a286;
+                        content: "무신사 단독";
+                    }
+                }
+
+                &--link {
+                    width: 100%;
+                    font-size: 0;
+
+                    & > * {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+
+                    .product__item--thumb-nail {
+                        padding-top: 54.54%;
+                        width: 45.3%;
+                        max-width: 320px;
+
+                        @include mq(768px) {
+                            padding-top: 385px;
+                            width: 320px;
+                        }
+                    }
+                    .product__item--information {
+                        width: 54.7%;
+
+                        &:before,
+                        &:after {
+                            display: none;
+                        }
+
+                        @include mq(768px) {
+                            width: calc(100% - 320px);
+
+                            .product__item--discount-rate {
+                                margin-left: 15px;
+                                float: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

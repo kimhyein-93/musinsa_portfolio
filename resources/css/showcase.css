@@ -1,0 +1,201 @@
+@charset "UTF-8";
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button, input, select { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; font-family: "맑은고딕", sans-serif; font-weight: 400; /* letter-spacing: -0.03em; */ }
+
+html { font-size: 16px; }
+
+@media (min-width: 26.5625em) { html { font-size: 18px; } }
+
+main { display: block; }
+
+img { max-width: 100%; vertical-align: middle; }
+
+body { line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+ul, ol, li { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; color: inherit; text-decoration: none; }
+
+/* change colours to suit your needs */
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+/* change colours to suit your needs */
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #cccccc; margin: 1em 0; padding: 0; }
+
+input, select, textarea { vertical-align: middle; }
+
+button { outline: 0; cursor: pointer; }
+
+.clearfix:after { content: ""; display: table; clear: both; }
+
+.ir { position: absolute; font-size: 0; height: 0; text-indent: -9999%; }
+
+::-webkit-input-placeholder { color: #aaa; }
+
+::-moz-placeholder { color: #aaa; }
+
+:-ms-input-placeholder { color: #aaa; }
+
+::-ms-input-placeholder { color: #aaa; }
+
+::placeholder { color: #aaa; }
+
+.sdown { font-size: 0.5em; }
+
+header, footer { display: -webkit-box; display: -ms-flexbox; display: flex; position: fixed; left: 0; width: 100%; background: #fff; text-align: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; z-index: 10; }
+
+header { height: 3.125rem; top: 0; }
+
+footer { height: 4.375rem; bottom: 0; }
+
+.section { overflow: hidden; position: relative; }
+
+.section .section-inner { position: relative; max-width: 750px; margin: 0 auto; }
+
+.section .section-inner .parallax-object { -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
+
+.section-main { background-image: url("../images/showcase/bg_main.jpg"); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover; }
+
+.section-main .text-box { position: absolute; z-index: 3; }
+
+.section-main .section-inner { padding: 0 1.25rem; }
+
+.section-main .section-inner.first:after { content: ""; display: table; clear: both; }
+
+.section-main .section-inner.first .text-box { width: 54.4%; left: 9.3%; bottom: 1.25rem; }
+
+.section-main .section-inner.first .text-box p { font-size: 0.75rem; font-weight: 600; margin-bottom: 0.937rem; }
+
+.section-main .section-inner.first .parallax-thumbnail { float: right; margin-top: 1.875rem; margin-right: -1.719rem; width: 38.4%; padding-bottom: 38.4%; background-image: url("../images/showcase/thumb_main_person01.jpg"); background-position: 50% 0; background-repeat: no-repeat; background-size: cover; }
+
+.section-main .section-inner.first .parallax-object { position: absolute; top: 0; right: -6.6%; width: 66.8%; z-index: 2; }
+
+.section-main .section-inner.second { font-size: 0; }
+
+.section-main .section-inner.second .text-box { width: 46.3%; right: 13.3%; top: 20.5%; }
+
+.section-main .section-inner.second .parallax-thumbnail { display: inline-block; vertical-align: bottom; }
+
+.section-main .section-inner.second .parallax-thumbnail.left { position: relative; width: 76.8%; padding-bottom: 76.8%; margin-left: -7.6%; }
+
+.section-main .section-inner.second .parallax-thumbnail.left .child-thumbnail { position: absolute; width: 50%; padding-bottom: 50%; }
+
+.section-main .section-inner.second .parallax-thumbnail.left .child-thumbnail.top { top: 0; left: 0; background-image: url("../images/showcase/thumb_main_person02.jpg"); background-position: 16% 32%; background-repeat: no-repeat; background-size: 390%; }
+
+.section-main .section-inner.second .parallax-thumbnail.left .child-thumbnail.bottom { bottom: 0; right: 0; background-image: url("../images/showcase/thumb_main_person02.jpg"); background-position: 49% 56%; background-repeat: no-repeat; background-size: 390%; }
+
+.section-main .section-inner.second .parallax-thumbnail.right { width: 38.4%; padding-bottom: 38.4%; background-image: url("../images/showcase/thumb_main_person04.jpg"); background-position: 50% 0; background-repeat: no-repeat; background-size: cover; margin-right: -7.6%; }
+
+.section-main .section-inner.second .parallax-thumbnail.bottom { position: absolute; left: -6%; bottom: -5.7%; width: 34.6%; padding-bottom: 34.6%; background-image: url("../images/showcase/thumb_main_person03.jpg"); background-position: 50% 0; background-repeat: no-repeat; background-size: cover; }
+
+.section-main .section-inner.second .parallax-object { position: absolute; top: 100%; left: -6%; width: 35.7%; }
+
+.section-main .section-inner.third:after { content: ""; display: table; clear: both; }
+
+.section-main .section-inner.third .text-box { width: 51.5%; left: 4.6%; top: 46.9%; }
+
+.section-main .section-inner.third .parallax-thumbnail { float: right; margin-top: 0.937rem; margin-right: -13%; width: 38.4%; padding-bottom: 38.4%; background-image: url("../images/showcase/thumb_main_person05.jpg"); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover; }
+
+.section-main .section-inner.third .parallax-object { position: absolute; top: 27.5%; right: 14.1%; width: 40.4%; }
+
+.section-main .section-inner.fourth .parallax-thumbnail { margin-top: -1.344rem; margin-left: -13%; width: 38.4%; padding-bottom: 38.4%; background-image: url("../images/showcase/thumb_main_person06.jpg"); background-position: 50% 50%; background-repeat: no-repeat; background-size: 142%; }
+
+.section-intro1 .section-inner { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; max-width: none; min-height: 100vh; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background-image: url("../images/showcase/bg_intro1.jpg"); background-position: 50% 50%; background-repeat: no-repeat; background-size: cover; }
+
+.section-intro1 .text-box img { display: block; margin-left: auto; margin-right: auto; }
+
+.section-intro1 .text-box img:nth-child(1) { width: 47.8%; }
+
+.section-intro1 .text-box img:nth-child(2) { width: 7.8%; }
+
+.section-intro1 .text-box img:nth-child(3) { width: 50.8%; }
+
+.section-intro1 .text-box img:nth-child(2) { margin-top: 2.187rem; margin-bottom: 2.187rem; }
+
+.hidden-area { width: 100%; height: 0; background: transparent; }
+
+.section-intro2 { background: #d5d5d5; }
+
+.section-intro2 img { max-width: none; }
+
+.section-intro2 .text-box { width: 100%; z-index: 3; }
+
+.section-intro2 .text-box img { max-width: 100%; }
+
+.section-intro2 .text-box p { margin-top: 1.031rem; font-size: 0.875rem; line-height: 1.536em; }
+
+.section-intro2 .section-inner.ddd { padding-top: 13.75rem; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box img { display: block; margin-left: auto; margin-right: auto; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box img:nth-child(1) { width: 8.9%; opacity: 0; -webkit-transition: all 0.5s ease-in-out 0.2s; transition: all 0.5s ease-in-out 0.2s; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box img:nth-child(2) { width: 50.2%; opacity: 0; -webkit-transition: all 0.5s ease-in-out 0.4s; transition: all 0.5s ease-in-out 0.4s; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box img:nth-child(3) { width: 59.2%; opacity: 0; -webkit-transition: all 0.5s ease-in-out 0.6s; transition: all 0.5s ease-in-out 0.6s; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box img:nth-child(2) { margin-top: 1.562rem; margin-bottom: 1.562rem; }
+
+.section-intro2 .section-inner.ddd .parallax-object.text-box.on img { opacity: 1; }
+
+.section-intro2 .section-inner.righter .parallax-object { -webkit-transition: all 0.7s ease-in-out; transition: all 0.7s ease-in-out; text-align: center; }
+
+.section-intro2 .section-inner.righter .parallax-object.shoes { margin-top: 6.093rem; margin-left: 0; width: 118.6%; }
+
+.section-intro2 .section-inner.righter .parallax-object.shoes.on { margin-left: -17.7%; }
+
+.section-intro2 .section-inner.cx-foam { margin-top: -3.594rem; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.text-box { position: absolute; top: 0.937rem; left: 9.3%; opacity: 0; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.text-box.on { opacity: 1; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.text-box img { width: 34.6%; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.shoes { position: relative; margin-left: -35.4%; width: 135.4%; z-index: 2; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.shoes.on { margin-left: -17.7%; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.insole { position: absolute; top: -9.5rem; right: 0; width: 32.8%; }
+
+.section-intro2 .section-inner.cx-foam .parallax-object.insole.on { right: 3.7%; }
+
+.section-intro2 .section-inner.cx-stretch .parallax-object.text-box { position: absolute; top: 3.375rem; left: 9.3%; opacity: 0; }
+
+.section-intro2 .section-inner.cx-stretch .parallax-object.text-box.on { opacity: 1; }
+
+.section-intro2 .section-inner.cx-stretch .parallax-object.text-box img { width: 64.6%; }
+
+.section-intro2 .section-inner.cx-stretch .parallax-object.shoes { margin-left: 0; width: 135.4%; }
+
+.section-intro2 .section-inner.cx-stretch .parallax-object.shoes.on { margin-left: -17.7%; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.text-box { position: absolute; top: -2.969rem; left: 9.3%; opacity: 0; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.text-box.on { opacity: 1; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.text-box img { width: 53.3%; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.shoes.top { position: absolute; top: -8.125rem; right: -18.6%; width: 46.9%; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.shoes.top.on { right: -9.3%; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.shoes.bottom { width: 135.4%; margin-left: -35.4%; }
+
+.section-intro2 .section-inner.new-outsole .parallax-object.shoes.bottom.on { margin-left: -17.7%; }

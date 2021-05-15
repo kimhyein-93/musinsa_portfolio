@@ -1,0 +1,168 @@
+@charset "UTF-8";
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button, input, select { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; font-family: "맑은고딕", sans-serif; font-weight: 400; /* letter-spacing: -0.03em; */ }
+
+html { font-size: 16px; }
+
+@media (min-width: 26.5625em) { html { font-size: 18px; } }
+
+main { display: block; }
+
+img { max-width: 100%; vertical-align: middle; }
+
+body { line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+ul, ol, li { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; color: inherit; text-decoration: none; }
+
+/* change colours to suit your needs */
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+/* change colours to suit your needs */
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #cccccc; margin: 1em 0; padding: 0; }
+
+input, select, textarea { vertical-align: middle; }
+
+button { outline: 0; cursor: pointer; }
+
+.clearfix:after { content: ""; display: table; clear: both; }
+
+.ir { position: absolute; font-size: 0; height: 0; text-indent: -9999%; }
+
+::-webkit-input-placeholder { color: #aaa; }
+
+::-moz-placeholder { color: #aaa; }
+
+:-ms-input-placeholder { color: #aaa; }
+
+::-ms-input-placeholder { color: #aaa; }
+
+::placeholder { color: #aaa; }
+
+.sdown { font-size: 0.5em; }
+
+.product-container .product-header { display: -webkit-box; display: -ms-flexbox; display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 3.125rem; padding: 0 1.062rem 0 0.937rem; background: #fff; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; z-index: 10; }
+
+.product-container .product-header > * { display: inline-block; }
+
+.product-container .product-header__information--total-text { font-size: 0.875rem; font-weight: 700; line-height: 1.312rem; }
+
+.product-container .product-header__information--refresh-text { margin-left: 10px; font-size: 0.75rem; line-height: 1.125rem; color: #aaa; }
+
+.product-container .product-header__view-type { width: 1.375rem; height: 1.375rem; }
+
+.product-container .product__list { margin-top: 3.125rem; }
+
+.product-container .product__list .product__item { vertical-align: top; }
+
+.product-container .product__list .product__item--new-label .product__item--information { position: relative; }
+
+.product-container .product__list .product__item--new-label .product__item--information:before { display: block; position: absolute; left: 0.562rem; width: 2.187rem; content: ""; background: #ff9500; content: "NEW"; }
+
+.product-container .product__list .product__item--new-label.product__item--exclusive-label .product__item--information:after { left: 2.734rem; }
+
+.product-container .product__list .product__item--exclusive-label .product__item--information { position: relative; }
+
+.product-container .product__list .product__item--exclusive-label .product__item--information:after { display: block; position: absolute; bottom: 7.937rem; left: 0.562rem; width: 3.937rem; content: ""; background: #18a286; content: "무신사 단독"; }
+
+.product-container .product__list .product__item--link { display: block; }
+
+.product-container .product__list .product__item--thumb-nail { overflow: hidden; position: relative; background: #f1f1f1; text-align: center; padding-top: 120.54%; }
+
+.product-container .product__list .product__item--thumb-nail img { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.product-container .product__list .product__item--information { background: #fff; padding: 1.25rem 0.625rem; height: 8.75rem; }
+
+.product-container .product__list .product__item--information:before, .product-container .product__list .product__item--information:after { top: -0.813rem; height: 1.625rem; font-size: 0.687rem; text-align: center; line-height: 1.625rem; color: #fff; z-index: 2; }
+
+.product-container .product__list .product__item--brand { font-size: 0.687rem; }
+
+.product-container .product__list .product__item--name { margin-top: 0.5rem; font-size: 0.875rem; font-weight: 700; word-break: keep-all; word-wrap: break-word; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; word-wrap: normal; line-height: 1.125rem; }
+
+.product-container .product__list .product__item--final-information { margin-top: 0.125rem; }
+
+.product-container .product__list .product__item--final-information:after { content: ""; display: table; clear: both; }
+
+.product-container .product__list .product__item--price:after { content: ""; display: table; clear: both; }
+
+.product-container .product__list .product__item--final-price { font-size: 16px; font-weight: 700; line-height: 1.5rem; float: left; }
+
+.product-container .product__list .product__item--discount-rate { font-size: 16px; font-weight: 700; line-height: 1.5rem; color: #ff001f; float: right; }
+
+.product-container .product__list .product__item--real-price { font-size: 0.687rem; color: #aaa; font-weight: 500; line-height: 0.825rem; text-decoration: line-through; }
+
+.product-container__grid-two .product-header__view-type { background-image: url("../images/product/Gridview.png"); background-position: 50% 50%; background-repeat: no-repeat; background-size: 100%; }
+
+.product-container__grid-two .product__list { font-size: 0; }
+
+.product-container__grid-two .product__list .product__item { display: inline-block; width: 50%; }
+
+@media (min-width: 48em) { .product-container__grid-two .product__list .product__item { width: 33.333%; } }
+
+.product-container__grid-two .product__list .product__item--thumb-nail img { width: 100%; }
+
+@media (min-width: 48em) { .product-container__grid-two .product__list .product__item--thumb-nail img { width: auto; } }
+
+@media (min-width: 64em) { .product-container__grid-two .product__list .product__item--thumb-nail { padding-top: 0; height: 385px; } }
+
+.product-container__grid-one .product-header__view-type { background-image: url("../images/product/Fullview.png"); background-position: 50% 50%; background-repeat: no-repeat; background-size: 100%; }
+
+.product-container__grid-one .product__list .product__item { display: block; width: 100%; }
+
+.product-container__grid-one .product__list .product__item:before, .product-container__grid-one .product__list .product__item:after { bottom: 9.125rem; }
+
+.product-container__grid-one .product__list .product__item--thumb-nail { padding-top: 0; }
+
+.product-container__grid-one .product__list .product__item--thumb-nail img { position: relative; top: auto; left: auto; width: 100%; max-width: 375px; -webkit-transform: none; -ms-transform: none; transform: none; }
+
+.product-container__grid-one .product__list .product__item--information { height: auto; padding: 1.25rem 0.937rem 2.5rem; }
+
+@media (min-width: 48em) { .product-container__grid-one .product__list .product__item--discount-rate { margin-left: 15px; float: left; } }
+
+.product-container__grid-landscape .product-header__view-type { background-image: url("../images/product/Listview.png"); background-position: 50% 50%; background-repeat: no-repeat; background-size: 100%; }
+
+.product-container__grid-landscape .product__list .product__item { display: block; width: 100%; }
+
+.product-container__grid-landscape .product__list .product__item:before, .product-container__grid-landscape .product__list .product__item:after { height: 1.625rem; font-size: 0.687rem; text-align: center; line-height: 1.625rem; color: #fff; z-index: 2; }
+
+.product-container__grid-landscape .product__list .product__item--new-label { position: relative; }
+
+.product-container__grid-landscape .product__list .product__item--new-label:before { display: block; position: absolute; bottom: 0; left: 0; width: 2.187rem; content: ""; background: #ff9500; content: "NEW"; }
+
+.product-container__grid-landscape .product__list .product__item--new-label.product__item--exclusive-label:after { left: 2.187rem; }
+
+.product-container__grid-landscape .product__list .product__item--exclusive-label { position: relative; }
+
+.product-container__grid-landscape .product__list .product__item--exclusive-label:after { display: block; position: absolute; bottom: 0; left: 0; width: 3.937rem; content: ""; background: #18a286; content: "무신사 단독"; }
+
+.product-container__grid-landscape .product__list .product__item--link { width: 100%; font-size: 0; }
+
+.product-container__grid-landscape .product__list .product__item--link > * { display: inline-block; vertical-align: middle; }
+
+.product-container__grid-landscape .product__list .product__item--link .product__item--thumb-nail { padding-top: 54.54%; width: 45.3%; max-width: 320px; }
+
+@media (min-width: 48em) { .product-container__grid-landscape .product__list .product__item--link .product__item--thumb-nail { padding-top: 385px; width: 320px; } }
+
+.product-container__grid-landscape .product__list .product__item--link .product__item--information { width: 54.7%; }
+
+.product-container__grid-landscape .product__list .product__item--link .product__item--information:before, .product-container__grid-landscape .product__list .product__item--link .product__item--information:after { display: none; }
+
+@media (min-width: 48em) { .product-container__grid-landscape .product__list .product__item--link .product__item--information { width: calc(100% - 320px); }
+  .product-container__grid-landscape .product__list .product__item--link .product__item--information .product__item--discount-rate { margin-left: 15px; float: left; } }

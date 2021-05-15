@@ -1,0 +1,217 @@
+@import "variable";
+
+@function rem($pxSize) {
+    $remSize: ($pxSize / 2) / 16;
+    $floor: floor($remSize * 1000) / 1000;
+
+    @return #{$floor}rem;
+}
+
+@mixin background($img, $bgp: null, $bgr: null, $bgz: null) {
+    /// ❗ 필수값
+    /// $img : 이미지 경로 및 파일명 => 'kr/common/logo.png'
+
+    /// ❓ 선택값
+    /// 하나씩 쓸 경우엔 지시자 지정 필수 => @include background('kr/common/logo.png', $bgr: no-repeat); 👈 "$bgr"
+    /// $bgp : position, $bgr : repeat, $bgz : size
+
+    @if $bgp == null {
+        // background position 값이 없을 때
+        background-image: url("#{$img}");
+        background-repeat: $bgr;
+    } @else if $bgr == null {
+        // background repeat 값이 없을 때
+        background-image: url("#{$img}");
+        background-position: $bgp;
+    } @else {
+        // position, repeat 값이 둘 다 있을 때
+        background-image: url("#{$img}");
+        background-position: $bgp;
+        background-repeat: $bgr;
+    }
+
+    // background size 값이 있으면 반환, 없으면 생략
+    background-size: $bgz;
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin wordBreak {
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+@mixin textHidden {
+    text-indent: -9999%;
+    font-size: 0;
+}
+
+@mixin ellipsis($lines: false, $lh: null) {
+    /// @ 값이 없을 경우
+    /// 기본적으로 1줄 말줄임
+
+    /// @ 값이 2이상 일 경우
+    /// $lh : line-height;
+    /// 해당하는 값만 큼 말줄임 => @include ellipsis(3); 👈 3줄 말줄임
+    /// 이슈: IE 여러줄 말 줄임 표시 ❌, 넘침 방지를 위해 max-height 지정.
+
+    @if ($lines) {
+        // 여러 줄 말줄임
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        word-wrap: normal;
+        line-height: $lh;
+        // max-height: $lh * $lines; // IE Fix
+    } @else {
+        // 한 줄 말줄임
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+    }
+}
+
+@mixin translate($x: null, $y: null) {
+    /// $x, $y 하나만 쓸 경우
+    /// ❗ 지시자 필수.(단, $x 일 땐 생략 가능)
+    /// @include translate($x:-50%) => transform: translateX(-50%)
+
+    /// $x, $y 둘 다 쓸 경우
+    /// ❓ 지시자 생략 가능
+    /// @include translate(-50%, -50%) => transform: translate(-50%, -50%)
+
+    @if $x == null {
+        transform: translateY($y);
+    } @else if $y == null {
+        transform: translateX($x);
+    } @else {
+        transform: translate($x, $y);
+    }
+}
+
+@mixin bullet($selector: before, $position: null, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+    /// ❗ 필수값
+    /// $selector => 미지정시 before
+
+    /// ❓ 선택값
+    /// 값 지정 시 지시자 필수
+    /// $position, $top, $right, $bottom, $left
+
+    position: relative;
+
+    &:#{$selector} {
+        @if $position == null {
+            display: inline-block;
+            vertical-align: middle;
+        } @else {
+            display: block;
+        }
+        position: $position;
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+        width: $width;
+        height: $height;
+        content: "";
+        @content;
+    }
+}
+
+@mixin radius($radius: null, $tl: null, $tr: null, $bl: null, $br: null) {
+    @if $tl or $tr or $bl or $br {
+        border-top-left-radius: $tl;
+        border-top-right-radius: $tr;
+        border-bottom-left-radius: $bl;
+        border-bottom-right-radius: $br;
+    } @else {
+        border-radius: $radius;
+    }
+}
+
+@mixin triangle($selector: before, $size: 15px, $direction: "down", $color: null) {
+    position: relative;
+
+    &:#{$selector} {
+        display: block;
+        width: 0;
+        height: 0;
+        @if $direction == "up" {
+            border-left: $size / 2 solid transparent;
+            border-right: $size / 2 solid transparent;
+            border-bottom: $size - 2 solid $color;
+        } @else if $direction == "left" {
+            border-bottom: $size / 2 solid transparent;
+            border-right: $size / 2 solid $color;
+            border-top: $size - 2 solid transparent;
+        } @else if $direction == "right" {
+            border-bottom: $size / 2 solid transparent;
+            border-left: $size / 2 solid $color;
+            border-top: $size - 2 solid transparent;
+        } @else {
+            border-left: $size / 2 solid transparent;
+            border-right: $size / 2 solid transparent;
+            border-top: $size - 2 solid $color;
+        }
+        content: "";
+        @content;
+    }
+}
+
+@mixin arrows($arrSize, $lineWidth: 1px, $color: #000, $top: 50%, $right: null, $dir: "bottom") {
+    /// ✔ 기본값
+    /// $color: 색상. #000;
+    /// $lineWidth : 굵기. 1px;
+    /// $top: 50%;
+    /// $dir: 화살표 방향. e.g., 'bottom' : ↑, 'top' : ↓, 'right' : →;
+
+    /// ❗ 필수값
+    /// $arrSize : 사이즈.
+
+    /// ❓ 선택값
+    /// $right, @content...;
+
+    &:after {
+        display: block;
+        position: absolute;
+        top: $top;
+        right: $right;
+        width: round($arrSize / 2 + 1);
+        height: round($arrSize / 2 + 1);
+        border: {
+            style: solid;
+            width: 0 $lineWidth $lineWidth 0;
+        }
+
+        @if $dir == "bottom" {
+            transform: rotate(45deg);
+        } @else if $dir == "top" {
+            transform: rotate(-135deg);
+        } @else if $dir == "right" {
+            transform: rotate(-45deg);
+        }
+
+        content: "";
+        pointer-events: none;
+        @content;
+    }
+}
+
+@mixin transition($property: all, $function: linear, $duration: null, $delay: null) {
+    transition: $property $duration $function $delay;
+
+    $engins: -webkit-, -moz-, -o-, -ms-;
+    @each $engin in $engins {
+        #{$engin}transition: $property $duration $function $delay;
+    }
+}

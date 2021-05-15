@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/product.css">
+    <title>상품 목록</title>
+</head>
+<body>
+    <!--
+        * class 
+        product-container__grid-one > 1 grid type
+        product-container__grid-two > 2 grid type
+        product-container__grid-landscape > landscape type
+    -->
+    <main class="product-container product-container__grid-two">
+        <!-- product header -->
+        <header class="product-header">
+            <p class="product-header__information">
+                <span class="product-header__information--total-text">상품 407,118개</span>
+                <span class="product-header__information--refresh-text">15분 전 갱신</span>
+            </p>
+            <a href="#" class="product-header__view-type"></a>
+        </header>
+        <!--// product header -->
+        <!-- product list -->
+        <section>
+            <ul class="product__list">
+                <li class="product__item product__item--new-label product__item--exclusive-label">
+                    <a class="product__item--link">
+                        <div class="product__item--thumb-nail">
+                            <img src="http://image.msscdn.net/images/goods_img/20180921/865862/865862_2_320.jpg" alt="">
+                        </div>
+                        <!-- 
+                            * class 
+                            product__item--new-label > "NEW" 라벨
+                            product__item--exclusive-label > "무신사 단독" 라벨
+                        -->
+                        <div class="product__item--information">
+                            <p class="product__item--brand">무신사 스탠다드</p>
+                            <p class="product__item--name">
+                                [유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌드 대디 숄더 싱글 롱 코트 [블랙]
+                            </p>
+                            <!-- 
+                                * data-role
+                                data-discount-rate="10" > 할인률 data : 10%
+                                data-real-price="255000" > 할인이전 가격 data : 255000
+                            -->
+                            <div class="product__item--price product__item--discount" data-discount-rate="10" data-real-price="255000">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="product__item product__item--new-label">
+                    <a class="product__item--link">
+                        <div class="product__item--thumb-nail">
+                            <img src="http://image.musinsa.com/images/goods_img/20180703/810034/810034_2_320.jpg" alt="">
+                        </div>
+                        <div class="product__item--information">
+                            <p class="product__item--brand">컨버스</p>
+                            <p class="product__item--name">
+                                척 70 클래식
+                            </p>
+                            <div class="product__item--price" data-real-price="89000">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="product__item product__item--exclusive-label">
+                    <a class="product__item--link">
+                        <div class="product__item--thumb-nail">
+                            <img src="http://image.msscdn.net/images/goods_img/20180921/865862/865862_2_320.jpg" alt="">
+                        </div>
+                        <div class="product__item--information">
+                            <p class="product__item--brand">무신사 스탠다드</p>
+                            <p class="product__item--name">
+                                [유아인 착장상품] 무신사랑 이벤트 진행중 - 캐시미어 블렌드 대디 숄더 싱글 롱 코트 [블랙]
+                            </p>
+                            <div class="product__item--price product__item--discount" data-discount-rate="20" data-real-price="355000">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="product__item">
+                    <a class="product__item--link">
+                        <div class="product__item--thumb-nail">
+                            <img src="http://image.musinsa.com/images/goods_img/20180703/810034/810034_2_320.jpg" alt="">
+                        </div>
+                        <div class="product__item--information">
+                            <p class="product__item--brand">컨버스</p>
+                            <p class="product__item--name">
+                                척 70 클래식
+                            </p>
+                            <div class="product__item--price" data-real-price="59000">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!--// product list -->
+    </main>
+    
+    <script src="../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="../resources/js/product.js"></script>
+</body>
+</html>
