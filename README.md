@@ -20,6 +20,8 @@
 4) source상에 상세 주석 명시.
 
 ## 2. 상품목록
+### HTML
++ product_list/list.html
 ### resources
 + css
   + /resources/css/product.scss
@@ -45,6 +47,8 @@
 + thumbnail의 경우 이미지의 height 기준으로 작업 하여 전체컷이 보일 수 있도록 작업
 
 ## 3. 쇼케이스
+### HTML
++ showcase/showcase.html
 ### resources
 + css
   + /resources/css/showcase.scss
